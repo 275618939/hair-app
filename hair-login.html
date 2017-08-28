@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>云胄科技</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <script data-main="scripts/register" src="scripts/vendor/require.js"></script>
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>云胄科技</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <script data-main="scripts/register" src="scripts/vendor/require.js"></script>
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
+    <header class="main-header">
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Logo -->
-      <a href="../../index2.html" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>云胄</b>科技</span>
-      </a>
-    </nav>
-  </header>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Logo -->
+            <a href="../../index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>云胄</b>科技</span>
+            </a>
+        </nav>
+    </header>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="contedsfnt-wrapper" ng-controller="RegisterCtrl">
-
-    <div class="col-md-12">
-      <!-- Horizontal Form -->
-      <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title">注册</h3>
-        </div>
-        <!-- /.box-header -->
-        <!-- form start -->
-        <form class="form-horizontal">
-          <div class="box-body">
-            <div class="form-group">
-              <label for="phone" class="col-sm-2 control-label">帐号</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="phone" placeholder="请输入手机号">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="password" class="col-sm-2 control-label">密码</label>
-
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="password" placeholder="请输入密码">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="identifying" class="col-sm-2 control-label">验证码</label>
-              <div class="col-sm-2">
-                <input type="number" class="form-control" id="identifying" placeholder="请输入验证码">
-              </div>
-              <div class="col-sm-3">
-                <img src="images/back-30-1.png" style="height: 23px;height: 20px;padding-right: 20px">
-                <button type="button" id="captcha"  class="btn btn-info" ng-click="sendCaptcha()">发送</button>
-              </div>
-
-
-
-
-            </div>
-
-        <!--    <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Remember me
-                  </label>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="contedsfnt-wrapper" ng-controller="RegisterCtrl">
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">注册</h3>
                 </div>
-              </div>
-            </div>-->
-          </div>
-          <!-- /.box-body -->
-          <div class="box-footer" ng-controller="CommonCtrl">
-            <button type="submit" class="btn btn-default">取消</button>
-            <button type="submit" class="btn btn-info pull-right" ng-click="onRegister();">注册</button>
-          </div>
-          <!-- /.box-footer -->
-        </form>
-      </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-2 control-label">帐号</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="phone" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">密码</label>
 
-      <!-- /.box -->
-    </div>
-  </div>
-  <!-- /.content-wrapper -->
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="identifying" class="col-sm-2 control-label">验证码</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="identifying" placeholder="请输入验证码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">发送验证码</label>
+                            <div class="col-sm-2">
+                                <!-- <img src="images/back-30-1.png" style="height: 23px;height: 20px;padding-right: 20px">-->
+                                <button type="button" id="captcha" class="btn btn-block btn-success"
+                                        ng-click="sendCaptcha()">发送
+                                </button>
+                            </div>
+                        </div>
 
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+                        <!--    <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> Remember me
+                                  </label>
+                                </div>
+                              </div>
+                            </div>-->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer" ng-controller="CommonCtrl">
+                        <button type="submit" class="btn btn-default">取消</button>
+                        <button type="submit" class="btn btn-info pull-right" ng-click="onRegister();">注册</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+
+            <!-- /.box -->
+        </div>
+
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">云胄科技</a>.</strong> All rights
-    reserved.
-  </footer>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">云胄科技</a>.</strong> All rights
+        reserved.
+    </footer>
 
 
 </div>

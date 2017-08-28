@@ -2,36 +2,35 @@
 require.config({
     paths: {
         angular: 'vendor/angular',
-        angularRoute:'vendor/angular-route',
+        angularRoute: 'vendor/angular-route',
         jquery: 'vendor/jquery',
-        //jqueryMobile:'vendor/jquery.mobile-1.4.5',
+        jqueryMd5: 'vendor/jQuery.md5',
         domReady: 'vendor/domReady'
-
     },
     shim: {
         jquery: {
             exports: 'jquery'
         },
-        jqueryMobile: {
-            deps: [ 'jquery'],
-            exports: 'jqueryMobile'
+        jqueryMd5: {
+            deps: ['jquery'],
+            exports: 'jqueryMd5'
         },
         angular: {
-            deps: [ 'jquery'],
+            deps: ['jquery'],
             exports: 'angular'
         }, angularRoute: {
-            deps: [ 'angular'],
+            deps: ['angular'],
             exports: 'angularRoute'
         }
     },
     waitSeconds: 0
-    //deps:['bootstrap'],//先加载bootstrap文件
+    //deps:['angular'],//angular
     /* urlArgs: "bust=" + (new Date()).getTime()  //防止读取缓存，调试用*/
 });
 //
 require([
-        'angular','angularRoute',
-        'app', 'domReady','jquery',
+        'angular', 'angularRoute',
+        'app', 'domReady', 'jquery', 'jqueryMd5',
         'filters/intervalFilters',
         'controllers/userController',
         'controllers/commonController',
@@ -40,10 +39,10 @@ require([
         // Any individual controller, service, directive or filter file
         // that you add will need to be pulled in here.
     ],
-    function (angular,angularRoute,app, domReady) {
+    function (angular, angularRoute, app, domReady) {
         'use strict';
-        app.config(['$httpProvider','$routeProvider',
-            function($httpProvider,$routeProvider) {
+        app.config(['$httpProvider', '$routeProvider',
+            function ($httpProvider, $routeProvider) {
                 $httpProvider.interceptors.push('RequestInterceptors');
                 /*      $routeProvider.when('/', {
                  templateUrl: 'views/root.html',
@@ -60,7 +59,7 @@ require([
             }
         ]);
 
-        domReady(function() {
+        domReady(function () {
             angular.bootstrap(document, ['zhwApp']);
             // The following is required if you want AngularJS Scenario tests to work
             $('html').addClass('ng-app: zhwApp');
