@@ -9,7 +9,6 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                 $scope.codeLength = 6;// 验证码长度
                 //注册
                 $scope.onRegister = function () {
-                    alert($.md5("4533fdgdgd"));
                     var phone = $("#phone").val();
                     var identifying = $("#identifying").val();
                     var password = $("#password").val();
@@ -68,7 +67,6 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                             alert(data.desc)
                             return;
                         }
-
                     });
                     $scope.curCount = $scope.count;
                     $("#captcha").css("background", "#b2b2b2");
