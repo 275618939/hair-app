@@ -69,7 +69,7 @@ define(['services/services', 'services/commonService'],
                         $http({
                             url: "http://" + commonService.getServerUrl() + "/business/account/register",
                             method: "post",
-                            data: "account=" + data.account + "&verify=" + data.verify + "&password=" + data.password
+                            data: "worker=" + data.account + "&verify=" + data.verify + "&password=" + data.password
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {
