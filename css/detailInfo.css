@@ -1,0 +1,125 @@
+body{
+    background-color:#FFFFFF ;
+
+}
+#detail {
+    position: relative;
+    overflow:hidden;
+}
+#topHeader{
+    width: 100%;
+    position:fixed;
+    border-bottom: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    text-align: center;
+    z-index: 100;
+}
+#topHeader span:first-child{
+    float: left;
+    margin: 10px;
+}
+#topHeader span:nth-child(2){
+    font-size: 20px;
+    margin-right:12%;
+    line-height: 45px;
+    font-weight: bold;
+    /*line-height: 60px;*/
+}
+section{
+    margin-top: 55px;
+    margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+}
+#contentHeader h3{
+    position: relative;
+    margin: 10px;
+}
+#contentHeader span{
+    position: relative;
+    margin: 10px;
+}
+#contentHeader p{
+    position: relative;
+    margin: 10px;
+    overflow: auto;
+}
+#contentHeader  img{
+    width: 100%;
+}
+#detailInfo{
+    position: relative;
+    margin: 10px;
+    overflow: auto;
+}
+footer{
+    z-index: 101;
+    width: 100%;
+    position:fixed;
+    white-space:nowrap;
+    border-top: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    bottom: 0;
+    margin:0 auto;
+}
+footer ul{
+    overflow: auto;
+    list-style: none;
+    display: table;
+    width: 100%;
+}
+footer li{
+    display: table-cell;
+    border-right: 1px solid #b2b2b2;
+    text-align: center;
+    line-height: 12px;
+}
+li:last-child{
+    border: none;
+}
+li span{
+    bottom: 7px;
+    position: relative;
+    margin-left: 5px;
+}
+#shareTool{
+    display: none;
+}
+#tool{
+    display: block;
+}
+#cancelLove{
+    display: none;
+}
+.shareContent {
+    position: relative;
+    background-color:#e4e2e2;
+    top: 50%;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+ .cancelShare {
+    height: 30px;
+    background-color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding: 20px;
+
+}
+.cancelShare a{
+    font-size: 22px;
+    vertical-align: middle;
+    color:#5ac6fb;
+}
+.shareContent img {
+    /* margin-top: 12px;*/
+    text-align: center;
+}
+
+
+
+
+
+
+

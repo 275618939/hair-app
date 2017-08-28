@@ -1,0 +1,121 @@
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="卓望阳光,卓望阳光官方网站,卓望阳光商城" />
+    <meta name="description" content="心理评测哪个网站好，当然首选卓望阳光!中国最早成立的心理评测网站！" />
+    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+    <!--离线应用的另一个技巧-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--设置开始页面图片-->
+    <!--<link rel="/touch/apple-touch-startup-image" href="startup.png" />-->
+    <!--在设置书签的时候可以显示好看的图标 #ffffff-->
+    <!--<link rel="apple-touch-icon" href="/touch/iphon_tetris_icon.png"/>-->
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/course.css"/>
+    <link type="text/css" rel="stylesheet" href="css/iosOverlay.css"/>
+    <script data-main="scripts/course" src="scripts/vendor/require.js"></script>
+
+
+</head>
+<html>
+<body>
+<div class="com-content" ng-controller="CourseClassDetailCtrl">
+    <div class="com-header-area" id="js-com-header-area" ng-controller="CommonCtrl">
+<!--        <a ng-click="goBack();"><div class="com-header-back"><img src="images/back.png"/></div></a>
+        <a ng-click="refresh();"><div class="com-header-title-child"><h2 ng-bind="name"></h2></div></a>-->
+        <a ng-click="goBack();"><div class="header-left"><img src="images/back.png"/></div></a>
+        <a ng-click="refresh();"><div class="header-center-i"><label ng-bind="name"></label></div></a>
+    </div>
+   <!-- <div class="modal" ng-if="loading">
+        <div class="loading">
+            <img src="images/loading.jpg" alt=""/><span ng-bind="loading_text"></span>
+        </div>
+    </div>-->
+    <div class="com-content-area-no">
+
+        <div class="zhw-course-img">
+           <!-- <img src="http://file.yalixinli.com/course/courseInfo/importanttraining.png"/>-->
+             <img ng-src="{{icon}}"/>
+        </div>
+
+
+        <div class="zhw-item-course">
+
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="zhw-item-course">
+            <div class="zhw-item-course-show">
+                <div  class="des"><b>课程信息</b></div>
+                <div  class="des">课程信息：<label ng-bind="name"></label></div>
+                <div  class="des">时长：<span><label ng-bind="interval|IntervalFilters"></label>分钟</span></div>
+                <div  class="des">在线学习人数：<span>45</span></div>
+                <div  class="des">下载量：<span ng-bind="download"></span></div>
+                <div  class="des">收藏：<span ng-bind="collection"></span></div>
+
+    <footer>
+        <div class="zhw-item-course-nav">
+
+            <div class="sp">
+                <a ng-click="onCollection()">
+                    <div class="up">
+                        <div class="navLeft"><image src="images/heart1.png" /></div>
+                    </div>
+                    <div class="down">
+                        <span >收藏</span>
+                    </div>
+                </a>
+            </div>
+            <div class="sp">
+                <a ng-click="onLineLook()">
+                    <div class="up">
+                        <div class="navLeft"><image src="images/play.png" /></div>
+                    </div>
+                    <div class="down">
+                        <span >在线学习</span>
+                    </div>
+                </a>
+            </div>
+            <div class="sp">
+                <!-- href="{{url}}"-->
+                <!--download="{{downname}}"-->
+              <!--  ng-click="onDownload()"-->
+                <a  id="courseDown"  href="#"  ng-click="onDownload()">
+                    <div class="up">
+                        <div class="navLeft"><image src="images/download.png" /></div>
+                    </div>
+                    <div class="down">
+
+                        <span>下载</span>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div  class="hidden">
+        <input type="file" id="file">
+    </div>
+    <div id="userCollection">
+        <span>测试</span>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

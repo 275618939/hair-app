@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>卓望阳光心理认证</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="卓望阳光,卓望阳光官方网站,卓望阳光商城" />
+    <meta name="description" content="心理评测哪个网站好，当然首选卓望阳光!中国最早成立的心理评测网站！" />
+<!--    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+    <!--离线应用的另一个技巧-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--设置开始页面图片-->
+    <!--<link rel="/touch/apple-touch-startup-image" href="startup.png" />-->
+    <!--在设置书签的时候可以显示好看的图标 #ffffff-->
+    <!--<link rel="apple-touch-icon" href="/touch/iphon_tetris_icon.png"/>-->
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/consulation.css"/>
+    <script data-main="scripts/consult" src="scripts/vendor/require.js"></script>
+
+</head>
+<body>
+    <div class="com-content">
+        <div class="com-header-area" id="js-com-header-area" ng-controller="CommonCtrl">
+      <!--      <a ng-click="goBack();"><div class="com-header-back"><img src="images/back.png"/></div></a>
+            <a ng-click="refresh();"><div class="com-header-title-child"><h2>心理咨询</h2></div></a>-->
+            <a ng-click="goBack();"><div class="header-left"><img src="images/back.png"/></div></a>
+            <a ng-click="refresh();"><div class="header-center-i"><span>档案信息</span></div></a>
+        </div>
+        <div class="modal" ng-if="loading">
+            <div class="loading">
+                <img src="images/loading.jpg" alt=""/><span ng-bind="loading_text"></span>
+            </div>
+        </div>
+        <div class="com-content-area-no" ng-controller="ShowMyselfCtrl">
+
+            <div class="zhw-item-consulation">
+                <div class="zhw-item-consulation-list">
+                    <a href="profiles.html">
+                        <div class="des">
+                            　　 <div  class="laLeft"><h3>生日</h3></div>
+                                 <div  class="laRight-tag"><span ng-bind="birthday"></span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zhw-item-consulation-list">
+                    <a href="profiles.html">
+                        <div class="des">
+                            　　 <div  class="laLeft"><h3>性别</h3></div>
+                            <div  class="laRight-tag"><span ng-bind="sex"></span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zhw-item-consulation-list">
+                    <a href="profiles.html">
+                        <div class="des">
+                            　　 <div  class="laLeft"><h3>婚否</h3></div>
+                            <div  class="laRight-tag"><span ng-bind="marry"></span></div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="com-footer-area-blank">
+
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

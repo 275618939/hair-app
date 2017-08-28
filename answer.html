@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>卓望阳光心理认证</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="卓望阳光,卓望阳光官方网站,卓望阳光商城" />
+    <meta name="description" content="心理评测哪个网站好，当然首选卓望阳光!中国最早成立的心理评测网站！" />
+    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+    <!--离线应用的另一个技巧-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--设置开始页面图片-->
+    <!--<link rel="/touch/apple-touch-startup-image" href="startup.png" />-->
+    <!--在设置书签的时候可以显示好看的图标 #ffffff-->
+    <!--<link rel="apple-touch-icon" href="/touch/iphon_tetris_icon.png"/>-->
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/answer.css"/>
+    <script data-main="scripts/test" src="scripts/vendor/require.js"></script>
+
+</head>
+<body>
+<div id="answer" ng-controller="StartTestCtrl" >
+    <header id="topHeader" ng-controller="CommonCtrl">
+       <span><a ng-click="goBack();"><img src="images/back-30.png"/></a></span>
+       <span><a ng-click="refresh();"><label ng-bind="name"></label></a></span>
+    </header>
+    <div class="modal" ng-if="loading">
+        <div class="loading">
+            <img src="images/loading.jpg" alt=""/><span ng-bind="loading_text"></span>
+        </div>
+    </div>
+    <section>
+
+
+            <div class="zhw-item-eva-test">
+                <label ng-bind="currentPage"></label>.<label ng-bind="currentItems.problem"></label>
+            </div>
+            <div class="zhw-item-eva-test-item">
+                <ul >
+                    <li ng-repeat="item in currentItems.options track by $index"><input type="radio" id="answer-{{$index+1}}"  value="{{$index+1}}" name="answer"  class="radio" ng-click="nextQuestion($index+1)"/><span ng-bind="item.value"></span></li>
+                </ul>
+            </div>
+            <div class="evaOprea">
+                <div class="upTitle" ng-show='showPrevBtn.show'> <a  ng-click="prevQuestion()"> 上一题</a></div>
+                <div class="subTitle" ng-show='showSubmitBtn.show'><a ng-click="submitTest()"><span>提交</span></a></div>
+            </div>
+            <div class="showProgress">
+                <div class="pro"><span><label ng-bind="currentPage"></label> / <label ng-bind="amount"></label></span></div>
+                <div class="bar">
+                    <div id="progress">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    </section>
+
+    <footer>
+
+
+    </footer>
+
+
+
+</div>
+
+</body>
+</html>

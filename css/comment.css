@@ -1,0 +1,107 @@
+body{
+      background-color: #eaeaea;
+}
+#comment {
+    position: relative;
+    overflow:hidden;
+}
+#topHeader{
+    width: 100%;
+    position:fixed;
+    border-bottom: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    text-align: center;
+    z-index: 100;
+}
+#topHeader span:first-child{
+    float: left;
+    margin: 10px;
+}
+#topHeader span:nth-child(2){
+    font-size: 20px;
+    margin-right:12%;
+    line-height: 45px;
+    /*line-height: 60px;*/
+}
+section{
+    margin-top: 55px;
+    margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+}
+section article{
+    overflow: auto;
+    position: relative;
+    background:#fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+article .content{
+    position: relative;
+    padding: 10px;
+    word-break:break-all;
+}
+article .timeTag{
+    position: relative;
+    padding: 10px;
+    margin-right:10px;
+    float: right;
+}
+
+footer{
+    z-index: 101;
+    width: 100%;
+    position:fixed;
+    white-space:nowrap;
+    border-top: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    bottom: 0;
+}
+footer span:first-child{
+    width: 94%;
+    float: left;
+    overflow: hidden;
+    margin: 10px;
+}
+@media only screen and (max-width: 1023px){
+    footer span:first-child{
+        width: 70%;
+    }
+}
+footer input[type=text]{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #b2b2b2;
+    outline: none;
+    height: 36px;
+    font-size: 20px;
+    width: 90%;
+}
+footer span:nth-child(2){
+    line-height: 60px;
+    margin-left: 10px;
+}
+footer button{
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #5ac6fb;
+ /*   border-color: #5ac6fb;*/
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px;
+
+}
+#noneComment{
+    display:none;
+    position: relative;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 18px;
+    color:#666666 ;
+}

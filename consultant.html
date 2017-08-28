@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>卓望阳光心理认证</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="卓望阳光,卓望阳光官方网站,卓望阳光商城" />
+    <meta name="description" content="心理评测哪个网站好，当然首选卓望阳光!中国最早成立的心理评测网站！" />
+<!--    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+    <!--离线应用的另一个技巧-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--设置开始页面图片-->
+    <!--<link rel="/touch/apple-touch-startup-image" href="startup.png" />-->
+    <!--在设置书签的时候可以显示好看的图标 #ffffff-->
+    <!--<link rel="apple-touch-icon" href="/touch/iphon_tetris_icon.png"/>-->
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/consulation.css"/>
+    <script data-main="scripts/consult" src="scripts/vendor/require.js"></script>
+    <script type="text/javascript">
+
+                function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip) {
+                    var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+                    var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+                    var openTip = oOpenTip || "";
+                    var shutTip = oShutTip || "";
+                    if (targetObj.style.display != "none") {
+                        if (shutAble) return;
+                        targetObj.style.display = "none";
+                        if (openTip && shutTip) {
+                            sourceObj.innerHTML = shutTip;
+                        }
+                    } else {
+                        targetObj.style.display = "block";
+                        if (openTip && shutTip) {
+                            sourceObj.innerHTML = openTip;
+                        }
+                    }
+                }
+
+    </script>
+
+</head>
+<body>
+    <div class="com-content" ng-controller="ConsultDetailCtrl">
+        <div class="com-header-area"  ng-controller="CommonCtrl">
+            <a ng-click="goBack();"><div class="header-left"><img src="images/back.png"/></div></a>
+            <a ng-click="refresh();"><div class="header-center-i"><span ng-bind="name"></span></div></a>
+        </div>
+        <!--<div class="modal" ng-if="loading">
+            <div class="loading">
+                <img src="images/loading.jpg" alt=""/><span ng-bind="loading_text"></span>
+            </div>
+        </div>-->
+        <div class="com-content-area-no">
+            <!--<div class="zhw-consultant-img">
+                <img src="images/consultant.png"/>
+            </div>-->
+            <div class="zhw-consultant-info">
+                <div class="tag"><img  src="images/renzheng.png"/></div>
+                <div class="logo"><img src="images/consultant_logo_02.png"></div>
+                <div class="des">
+                    <p><span class="span1" ng-bind="descript"></span></p>
+                    <p><span class="span2" ng-bind="company"></span></p>
+                    <p><span class="span3" ng-bind="degreeString"></span></p>
+                </div>
+            </div>
+
+            <div class="zhw-item-consulation-techar">
+                <div class="zhw-item-consultant">
+                    <p ng-bind="brief_1"></p>
+                    <p id="openShutManager" style="display: none"><a onclick="openShutManager(this,'box4',false,'>点击关闭','>点击展开')">>点击展开</a></p>
+                    <p id="box4" style="display:none" ng-bind="brief_2">
+                       <!-- 这里面放的是(●—●)的内容.-->
+                    </p>
+                </div>
+
+                <div class="zhw-item-consultant">
+                    <div class="title">擅长领域</div>
+                    <div class="section" ng-repeat="item in typeList">{{item.name}}</div>
+                    <!--<div class="section">人际关系</div>
+                    <div class="section">睡眠障碍</div>
+                    <div class="section">职场问题</div>
+                    <div class="section">亲子关系</div>
+                    <div class="section">孤独症</div>
+                    <div class="section">婚恋心理</div>-->
+                </div>
+                <footer>
+                    <div class="zhw-item-consultant-nav">
+                        <!--<ul>
+                            <li><div class="des">推荐指数</div><div class="sp">123</div></li>
+                            <li><div class="des">服务态度</div><div class="sp">12</div></li>
+                            <li><div class="des">咨询水平</div><div class="sp">99</div></li>
+                        </ul>-->
+                        <div class="sp">
+                            <div class="up">
+                                <span >推荐指数</span>
+                            </div>
+                            <div class="down">
+                                <span ng-bind="recommend"></span>
+                            </div>
+                        </div>
+                        <div class="sp">
+                            <div class="up">
+                                <span  >服务态度</span>
+                            </div>
+                            <div class="down">
+                                <span ng-bind="attitude"></span>
+                            </div>
+                        </div>
+                        <div class="sp">
+                            <div class="up">
+                                <span >咨询水平</span>
+                            </div>
+                            <div class="down">
+                                <span ng-bind="ability"></span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>

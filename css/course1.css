@@ -1,0 +1,66 @@
+body{
+    background-color: #eaeaea;
+}
+#comment {
+    position: relative;
+    overflow:hidden;
+}
+#topHeader{
+    width: 100%;
+    position:fixed;
+    border-bottom: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    text-align: center;
+    z-index: 100;
+}
+#topHeader span:first-child{
+    float: left;
+    margin: 10px;
+}
+#topHeader span:nth-child(2){
+    font-size: 20px;
+    margin-right:12%;
+    line-height: 45px;
+    /*line-height: 60px;*/
+}
+section{
+    margin-top: 55px;
+    margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+}
+section article{
+    overflow: auto;
+    position: relative;
+    background:#fff;
+    margin: 10px;
+}
+article .content{
+    position: relative;
+    padding: 10px;
+}
+article .timeTag{
+    position: relative;
+    padding: 10px;
+    margin-right:10px;
+    float: right;
+}
+
+.zhw-item-course-list{background:#fff;margin:10px; height:auto;width:auto;overflow:hidden;}
+.zhw-item-course-list img {position: relative;display:block;width: 100%;}
+.zhw-item-course-list .des{float:left ; margin:0px 0px 0px 0px;position: relative;display: block;}
+.zhw-item-course-list .classTop{margin:10px 0px 10px 20px; float:left;width: 100%}
+.zhw-item-course-list .laLeft{margin:5px 0px 10px 20px; float:left;color: #999999}
+.zhw-item-course-list .laRight{margin:5px 20px 10px 0px; float:right;color: #999999}
+
+footer{
+    z-index: 101;
+    width: 100%;
+    position:fixed;
+    white-space:nowrap;
+    border-top: 1px solid #b2b2b2;
+    background-color:#FFFFFF ;
+    bottom: 0;
+}
+
+

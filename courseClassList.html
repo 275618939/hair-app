@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>卓望阳光心理认证</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="卓望阳光,卓望阳光官方网站,卓望阳光商城" />
+    <meta name="description" content="心理评测哪个网站好，当然首选卓望阳光!中国最早成立的心理评测网站！" />
+    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+    <!--离线应用的另一个技巧-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+    <!--设置开始页面图片-->
+    <!--<link rel="/touch/apple-touch-startup-image" href="startup.png" />-->
+    <!--在设置书签的时候可以显示好看的图标 #ffffff-->
+    <!--<link rel="apple-touch-icon" href="/touch/iphon_tetris_icon.png"/>-->
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/course.css"/>
+    <script data-main="scripts/course" src="scripts/vendor/require.js"></script>
+
+</head>
+<body>
+<div class="com-content"  ng-controller="CourseClassDetailListCtrl">
+    <div class="com-header-area" id="js-com-header-area" ng-controller="CommonCtrl">
+        <a ng-click="goBack();"><div class="header-left"><img src="images/back-30.png"/></div></a>
+        <a ng-click="refresh();"><div class="header-center-i"><span ng-bind="className"></span></div></a>
+    </div>
+    <div class="modal" ng-if="loading">
+        <div class="loading">
+            <img src="images/loading.jpg" alt=""/><span ng-bind="loading_text"></span>
+        </div>
+    </div>
+    <div class="com-content-area-no">
+        <div class="zhw-item-course-class" >
+            <div class="zhw-item-course-class-list" ng-repeat="item in classItems" >
+                <a href="courseShow.html?id={{item.id}}&name={{item.name}}">
+                    <div class="img"><img   ng-src="{{item.icon}}"/></div>
+                    <div  class="title"><h3 ng-bind="item.name"></h3></div>
+                    <div  class="leftTag"><label>时长：<label ng-bind="item.interval|IntervalFilters"></label>分钟</label></div>
+                    <div  class="rightTag"><label>点击量：<label ng-bind="item.pv"></label></label></div>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- <div class="zhw-course-img">
+             <img src="images/courseDetail.png"/>
+         </div>-->
+        <!--    <div class="zhw-item-course">
+                <div class="zhw-item-course-show">
+                    <div  class="des"><b ng-bind="className"></b><b>:</b>
+                        <label ng-bind="classGuide">
+                        </label></div>
+                </div>
+            </div>-->
+
+        <!-- <div class="zhw-item-course" >
+             <div class="zhw-course-list">
+                 <div class="zhw-course-quarter-area" ng-repeat="item in classItems">
+                     <a href="courseShow.html?id={{item.id}}&name={{item.name}}">
+                        &lt;!&ndash; <div>&lt;!&ndash;<img src="{{item.icon}}">&ndash;&gt;<img src="http://file.yalixinli.com/course/homepage/communicateeffectively.png"></div>&ndash;&gt;
+                         <div class="des"><label ng-bind="item.name" ></label></div>
+                     </a>
+                 </div>
+             </div>
+
+         </div>
+ -->
+
+    </div>
+
+
+
+</div>
+
+</div>
+
+</body>
+</html>
