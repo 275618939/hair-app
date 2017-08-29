@@ -31,6 +31,8 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                         return;
                     }
                     //构造加密参数
+                  /*  alert("md5:" + $.md5(phone + password));
+                    alert(pass);*/
                     var pass = $.md5(phone + $.md5(phone + password) + identifying);
                     var data = {account: phone, verify: identifying, password: pass};
                     var promise = userService.userCreate(data);
@@ -88,6 +90,15 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                 };
 
             }]);
+        //用户创建店面
+        controllers.controller('ShopCtrl', ['$scope', 'UserService', 'CommonService',
+            function ($scope, userService, commonService) {
+                //注册
+                $scope.onLogin = function () {
+
+                };
+            }
+        ]);
         //用户登录
         controllers.controller('LoginCtrl', ['$scope', 'UserService', 'CommonService',
             function ($scope, userService, commonService) {
