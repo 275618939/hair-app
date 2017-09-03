@@ -39,15 +39,15 @@
     </header>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="contedsfnt-wrapper" ng-controller="LoginCtrl">
+    <div class="contedsfnt-wrapper" ng-controller="UpdatePassCtrl">
         <div class="col-md-12">
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">登录</h3>
+                    <h3 class="box-title">重置密码</h3>
                 </div>
                 <!-- /.box-header -->
-                <!-- form start  ng-blur="onImageVerify()" -->
+                <!-- form start  -->
                 <form class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
@@ -59,42 +59,21 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-2 control-label">密码</label>
-
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="password" placeholder="请输入密码">
                             </div>
                         </div>
-                        <div class="form-group" ng-show="showIdentifying.show">
+                        <div class="form-group">
                             <label for="identifying" class="col-sm-2 control-label">验证码</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="identifying" placeholder="请输入验证码">
                             </div>
                         </div>
-                        <div class="form-group" ng-show="showIdentifying.show">
-                            <label for="identifying" class="col-sm-2 control-label">
-                                <img id="img-identify"/>
-                            </label>
-                            <div class="col-sm-2">
-                                <button type="button" id="captcha" class="btn btn-block btn-success"
-                                        ng-click="onImageVerify()">看不清换一张
-                                </button>
-                            </div>
-                        </div>
-
-                        <!--    <div class="form-group">
-                              <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                  <label>
-                                    <input type="checkbox"> Remember me
-                                  </label>
-                                </div>
-                              </div>
-                            </div>-->
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer" ng-controller="CommonCtrl">
-                        <a href="hair-pass-forget.html"> <label>忘记密码</label></a>
-                        <button type="submit" class="btn btn-info pull-right" ng-click="onLogin();">登录</button>
+                        <a href="hair-login.html"> <label>取消</label></a>
+                        <button type="submit" class="btn btn-info pull-right" ng-click="onSetPwd();">确定</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

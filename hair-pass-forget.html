@@ -25,7 +25,6 @@
 <div class="">
 
     <header class="main-header">
-
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
             <!-- Logo -->
@@ -37,31 +36,23 @@
             </a>
         </nav>
     </header>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="contedsfnt-wrapper" ng-controller="LoginCtrl">
         <div class="col-md-12">
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">登录</h3>
+                    <h3 class="box-title">忘记密码</h3>
                 </div>
                 <!-- /.box-header -->
-                <!-- form start  ng-blur="onImageVerify()" -->
+                <!-- form start  -->
                 <form class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="phone" class="col-sm-2 control-label">帐号</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" id="phone"
-                                       placeholder="请输入手机号">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-sm-2 control-label">密码</label>
-
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                                       placeholder="请输入手机号" ng-blur="onImageVerify()">
                             </div>
                         </div>
                         <div class="form-group" ng-show="showIdentifying.show">
@@ -80,21 +71,11 @@
                                 </button>
                             </div>
                         </div>
-
-                        <!--    <div class="form-group">
-                              <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                  <label>
-                                    <input type="checkbox"> Remember me
-                                  </label>
-                                </div>
-                              </div>
-                            </div>-->
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer" ng-controller="CommonCtrl">
-                        <a href="hair-pass-forget.html"> <label>忘记密码</label></a>
-                        <button type="submit" class="btn btn-info pull-right" ng-click="onLogin();">登录</button>
+                        <a href="hair-login.html"> <label>取消</label></a>
+                        <button type="submit" class="btn btn-info pull-right" ng-click="onForgetPass();">确定</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

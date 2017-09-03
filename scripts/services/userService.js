@@ -7,15 +7,13 @@ define(['services/services', 'services/commonService'],
                     collectCourse: 3,
                     secrecyOpen: 0,
                     secrecyClose: 1,
-                    getUser: function () {
-                        return 'testUser';
-                    },
-                    /*获取用户咨询信息*/
-                    getUserConsultList: function (page) {
+                    /*创建店面*/
+                    shopCreate: function (data) {
                         var deferred = $q.defer();
                         $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/myself/counseling/" + page + "/" + 10,
-                            method: "get"
+                            url: "http://" + commonService.getServerUrl() + "/business/shop",
+                            method: "put",
+                            data: "name=" + data.name + "&description=" + data.description + "&address=" + data.address + "&telephone=" + data.telephone + "&longitude =" + data.longitude + "&latitude =" + data.latitude
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {
@@ -23,39 +21,13 @@ define(['services/services', 'services/commonService'],
                         });
                         return deferred.promise;
                     },
-                    /*获取用户评测信息*/
-                    getUserTestList: function (page) {
+                    /*用户登录*/
+                    userLogin: function (data) {
                         var deferred = $q.defer();
                         $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/myself/test/" + page + "/" + commonService.getMessageCount(),
-                            method: "get"
-                        }).success(function (data, status, headers, config) {
-                            deferred.resolve(data);
-                        }).error(function (data, status, headers, config) {
-                            deferred.reject(data);
-                        });
-                        return deferred.promise;
-                    },
-                    /*获取用户课程信息*/
-                    getUserCourseList: function (type, page) {
-                        var deferred = $q.defer();
-                        $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/myself/course/" + type + "/" + page + "/" + commonService.getMessageCount(),
-                            method: "get"
-                        }).success(function (data, status, headers, config) {
-                            deferred.resolve(data);
-                        }).error(function (data, status, headers, config) {
-                            deferred.reject(data);
-                        });
-                        return deferred.promise;
-                    },
-                    /*提交用户个人档案信息*/
-                    postCounseling: function (data) {
-                        var deferred = $q.defer();
-                        $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/user/myself",
+                            url: "http://" + commonService.getServerUrl() + "/business/worker/login",
                             method: "post",
-                            data: "birthday=" + data.birthday + "&sex=" + data.sex + "&marry=" + data.marry
+                            data: "account=" + data.account + "&verify=" + data.verify + "&password=" + data.password
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {
@@ -104,52 +76,27 @@ define(['services/services', 'services/commonService'],
                         });
                         return deferred.promise;
                     },
-                    /*获取用户信息*/
-                    getUserInfo: function () {
+                    /*用户忘记密码*/
+                    forgetPass: function (data) {
                         var deferred = $q.defer();
                         $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/user/find",
-                            method: "get"
-                        }).success(function (data, status, headers, config) {
-                            deferred.resolve(data);
-                        }).error(function (data, status, headers, config) {
-                            deferred.reject(data);
-                        });
-                        return deferred.promise;
-                    },
-                    /*获取用户档案信息*/
-                    getMyselfInfo: function (userId) {
-                        var deferred = $q.defer();
-                        $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/user/myself",
-                            method: "get"
-                        }).success(function (data, status, headers, config) {
-                            deferred.resolve(data);
-                        }).error(function (data, status, headers, config) {
-                            deferred.reject(data);
-                        });
-                        return deferred.promise;
-                    },
-                    /*获取评测状态信息*/
-                    getSecrecy: function () {
-                        var deferred = $q.defer();
-                        $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/user/secrecy",
-                            method: "get"
-                        }).success(function (data, status, headers, config) {
-                            deferred.resolve(data);
-                        }).error(function (data, status, headers, config) {
-                            deferred.reject(data);
-                        });
-                        return deferred.promise;
-                    },
-                    /*设置评测状态信息*/
-                    putSecrecy: function (secrecy, fileId) {
-                        var deferred = $q.defer();
-                        $http({
-                            url: "http://" + commonService.getServerUrl() + "/api/user/secrecy",
+                            url: "http://" + commonService.getServerUrl() + "/business/worker/forget",
                             method: "post",
-                            data: "secrecy=" + secrecy + "&fileId=" + fileId
+                            data: "account=" + data.account + "&verify=" + data.verify
+                        }).success(function (data, status, headers, config) {
+                            deferred.resolve(data);
+                        }).error(function (data, status, headers, config) {
+                            deferred.reject(data);
+                        });
+                        return deferred.promise;
+                    },
+                    /*用户设置密码*/
+                    setPass: function (data) {
+                        var deferred = $q.defer();
+                        $http({
+                            url: "http://" + commonService.getServerUrl() + "/business/worker/setpwd",
+                            method: "post",
+                            data: "account=" + data.account + "&verify=" + data.verify+ "&newpwd=" + data.newpwd
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {
