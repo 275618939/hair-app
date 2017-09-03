@@ -16,7 +16,6 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                         alert("手机号码为11位数字！请正确填写！");
                         return;
                     }
-                    //发送请求道服务端
                     if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone))) {
                         $("#phone").focus();
                         alert("请输入正确的手机号!");
@@ -39,11 +38,8 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                             alert(data.desc)
                             return;
                         }
-                        window.location.href = "hair-index.html";
+                        window.location.href = "hair-login.html";
                     });
-                    //记录userid，username 写入cookie
-                    commonService.addCookie("userId", userId, commonService.OneDayValidity);
-                    commonService.addCookie("userName", userName, commonService.OneDayValidity);
                 };
                 //发送验证码
                 $scope.sendCaptcha = function () {

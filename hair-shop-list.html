@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>云胄科技</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <script data-main="scripts/register" src="scripts/vendor/require.js"></script>
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>云胄科技</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <script data-main="scripts/shop" src="scripts/vendor/require.js"></script>
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="">
 
-  <header class="main-header">
+    <header class="main-header">
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Logo -->
-      <a href="../../index2.html" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>云胄</b>科技</span>
-      </a>
-    </nav>
-  </header>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="contedsfnt-wrapper" ng-controller="RegisterCtrl">
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Logo -->
+            <a href="../../index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>云胄</b>科技</span>
+            </a>
+        </nav>
+    </header>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="contedsfnt-wrapper" ng-controller="ShopListCtrl">
 
-    <div class="box">
-      <div class="box-header">
-        <h3 class="box-title">我的店面信息</h3>
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body no-padding">
-        <table class="table table-striped">
-          <tr>
-            <th style="width: 10px">#</th>
-            <th>店名</th>
-            <th>地址</th>
-            <th style="width: 40px">电话</th>
-          </tr>
-          <tr>
-            <td>1.</td>
-            <td>爱尚发艺</td>
-            <td>
-                北京是朝阳区某某路多少号
-            </td>
-            <td>13811112222</td>
-          </tr>
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">我的店面信息</h3>
+                <a href="hair-shop-create.html"><label>>>点击新增店</label></a>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
 
-        </table>
-      </div>
-      <!-- /.box-body -->
+                <table class="table table-striped">
+                    <tr>
+                        <th>店名</th>
+                        <th>地址</th>
+                        <th>电话</th>
+                    </tr>
+                    <tr ng-repeat="item in shopItems">
+                        <td ng-bind="item.name">店名</td>
+                        <td ng-bind="item.address">地址</td>
+                        <td ng-bind="item.telephone">电话</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+
+
     </div>
+    <!-- /.content-wrapper -->
 
-
-
-  </div>
-  <!-- /.content-wrapper -->
-
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">云胄科技</a>.</strong> All rights
-    reserved.
-  </footer>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">云胄科技</a>.</strong> All rights
+        reserved.
+    </footer>
 
 
 </div>
