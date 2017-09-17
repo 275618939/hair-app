@@ -53,11 +53,13 @@
                         <th>店名</th>
                         <th>地址</th>
                         <th>电话</th>
+                        <th>操作</th>
                     </tr>
                     <tr ng-repeat="item in shopItems">
                         <td ng-bind="item.name">店名</td>
                         <td ng-bind="item.address">地址</td>
                         <td ng-bind="item.telephone">电话</td>
+                        <td><a href="hair-shop-update.html?shopId={{item.id}}&name={{item.name}}&address={{item.address}}&telephone={{item.telephone}}&description={{item.description}}">操作</a></td>
                     </tr>
                 </table>
             </div>

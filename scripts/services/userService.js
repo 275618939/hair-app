@@ -24,10 +24,17 @@ define(['services/services', 'services/commonService'],
                     /*用户登录*/
                     userLogin: function (data) {
                         var deferred = $q.defer();
+                        var info;
+                        if (data.verify == null || data.verify.trim() == "" || data.verify == "undefined") {
+                            info = "account=" + data.account + "&password=" + data.password;
+                        } else {
+                            info = "account=" + data.account + "&verify=" + data.verify + "&password=" + data.password;
+                        }
                         $http({
                             url: "http://" + commonService.getServerUrl() + "/business/worker/login",
-                            method: "post",
-                            data: "account=" + data.account + "&verify=" + data.verify + "&password=" + data.password
+                            method: "POST",
+                            data: info
+                            //data: "account=" + data.account + "&verify=" + data.verify + "&password=" + data.password
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {
@@ -96,7 +103,7 @@ define(['services/services', 'services/commonService'],
                         $http({
                             url: "http://" + commonService.getServerUrl() + "/business/worker/setpwd",
                             method: "post",
-                            data: "account=" + data.account + "&verify=" + data.verify+ "&newpwd=" + data.newpwd
+                            data: "account=" + data.account + "&verify=" + data.verify + "&newpwd=" + data.newpwd
                         }).success(function (data, status, headers, config) {
                             deferred.resolve(data);
                         }).error(function (data, status, headers, config) {

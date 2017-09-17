@@ -202,18 +202,18 @@ define(['controllers/controllers', 'services/userService', 'services/commonServi
                         return;
                     }
                     //构造加密参数
-                    var pass;
-                    if ($scope.showIdentifying.show) {
-                        pass = $.md5(phone + $.md5(phone + password) + identifying);
-                    } else {
-                        pass = $.md5(phone + password);
+
+                    var pass = phone + $.md5(phone + password);
+                    if (identifying != null && identifying.trim().length > 0 && identifying != "undefined") {
+                       pass += identifying.trim();
                     }
+                    pass=$.md5(pass);
 
                     var data = {account: phone, verify: identifying, password: pass};
                     var promise = userService.userLogin(data);
                     promise.then(function (data) {
                         if (data.state != 1) {
-                            alert(data.desc)
+                            alert(data.desc);
                             if (data.state == 15 && data.value != null && data.value.trim() != "") {
                                 //显示验证码，重新输入验证码
                                 $scope.onImageVerify(data.value);
