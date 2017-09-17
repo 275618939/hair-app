@@ -11,6 +11,87 @@ define(['services/services'],
                     OneDayValidity: 24 * 60 * 60 * 1000,//有效期1天
                     ThirtyDayValidity: 30 * 60 * 60 * 1000,//有效期30天
                     HxAllTime: 9,
+                    defaultPower: 0x3f9f,
+                    getPowerInfo: function (id) {
+                        var len = this.powerInfo.powerOptions.length;
+                        for (var j = 0; j < len; j++) {
+                            if (id == this.powerInfo.powerOptions[j].id) {
+                                return this.powerInfo.powerOptions[j].label;
+                            }
+                        }
+                        return id;
+                    },
+                    powerInfo: {
+                        "powerOptions": [
+                            {
+                                "id": 0x3f9f,
+                                "label": "默认权限"
+                            },
+                            {
+                                "id": 0xfff,
+                                "label": "店长权限"
+                            },
+                            {
+                                "id": 0x0001,
+                                "label": "店信息维护"
+                            },
+                            {
+                                "id": 0x0002,
+                                "label": "店员信息维护"
+                            },
+                            {
+                                "id": 0x0004,
+                                "label": "服务维护"
+                            },
+                            {
+                                "id": 0x0008,
+                                "label": "套餐维护"
+                            },
+                            {
+                                "id": 0x0010,
+                                "label": "会员维护"
+                            },
+                            {
+                                "id": 0x0020,
+                                "label": "充值"
+                            },
+                            {
+                                "id": 0x0040,
+                                "label": "消费"
+                            },
+                            {
+                                "id": 0x0080,
+                                "label": "会员列表"
+                            },
+                            {
+                                "id": 0x0100,
+                                "label": "充值列表"
+                            },
+                            {
+                                "id": 0x0200,
+                                "label": "消费列表"
+                            },
+                            {
+                                "id": 0x0400,
+                                "label": "店统计"
+                            },
+                            {
+                                "id": 0x0800,
+                                "label": "店员统计"
+                            },
+                            {
+                                "id": 0x1000,
+                                "label": "工人维护"
+                            },
+                            {
+                                "id": 0x2000,
+                                "label": "公司维护"
+                            },
+                            {
+                                "id": 0x8000,
+                                "label": "权限控制"
+                            }]
+                    },
                     reportUrl: "http://" + window.location.host + ":9601/getScaleReportResult?json={'resultId':*}",
                     //添加cookie
                     addCookie: function (name, value, time) {
@@ -65,6 +146,69 @@ define(['services/services'],
                             pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
                         }
                         return pwd;
+                    },
+                    getDiscount: function (money) {
+                        var yuan = money * 10.0;
+                        return yuan.toFixed(0);
+                    },
+                    getDiscountConvert: function (money) {
+                        var yuan = money / 10.0;
+                        return yuan.toFixed(2);
+                    },
+                    getFen: function (money) {
+                        if (money <= 0) {
+                            return money;
+                        }
+                        var data = 0;
+                        var dotCount = 0; //小数点个数
+                        var floatCount = 0; //小数点后数据位数
+                        if (money == null)return -1;
+                        money = money.toString();
+                        var size = money.length;
+                        for (var i = 0; i < size; i++) {
+                            var c = money.charCodeAt(i);
+                            if (c >= 0x30 && c <= 0x39) {
+                                if (dotCount > 0) {
+                                    floatCount++;
+                                }
+                                if (floatCount > 2)return -1;
+                                data = data * 10 + (c - 0x30);
+                            }
+                            else if (c == 0x2e) {
+                                dotCount++;
+                                if (dotCount > 1)return -1;
+                            }
+                            else {
+                                return -1;
+                            }
+                        }
+                        for (var i = 2; i > floatCount; i--) {
+                            data = data * 10;
+                        }
+                        return data;
+                    },
+                    getYuan: function (money) {
+
+                        /* if (money < 0) return null;
+                         var data = "";
+
+                         data = String.fromCharCode(money % 10 + 0x30) + data;    //分
+                         money /= 10;
+                         data = String.fromCharCode(money % 10 + 0x30) + data;    //角
+                         money /= 10;
+                         data = '.' + data;
+                         if (money > 0) {
+                         while (money > 0) {
+                         data = String.fromCharCode(money % 10 + 0x30) + data;
+                         money /= 10;
+                         }
+                         } else {
+                         data = '0' + data;
+                         }
+                         return data;*/
+
+                        var yuan = money / 100.0;
+                        return yuan.toFixed(2);
                     },
                     jsonSort: function (json, key) {
                         for (var j = 1, jl = json.length; j < jl; j++) {

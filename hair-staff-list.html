@@ -16,7 +16,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    <script data-main="scripts/shop" src="scripts/vendor/require.js"></script>
+    <script data-main="scripts/staff" src="scripts/vendor/require.js"></script>
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -38,30 +38,29 @@
         </nav>
     </header>
     <!-- Content Wrapper. Contains page content -->
-    <div class="contedsfnt-wrapper" ng-controller="ShopListCtrl">
+    <div class="contedsfnt-wrapper" ng-controller="StaffListCtrl">
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">我的店面信息</h3>
-                <a href="hair-shop-create.html"><label>>>点击新增店</label></a>
+                <h3 class="box-title">我的员工信息</h3>
+                <a href="hair-staff-create.html?shopId={{shopId}}"><label>>>点击新员工</label></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
 
                 <table class="table table-striped">
                     <tr>
-                        <th>店名</th>
-                        <th>地址</th>
-                        <th>电话</th>
+                        <th>姓名</th>
+                        <th>权限</th>
+                        <th>手机号</th>
                         <th>操作</th>
                     </tr>
-                    <tr ng-repeat="item in shopItems">
-                        <td ng-bind="item.name">店名</td>
-                        <td ng-bind="item.address">地址</td>
-                        <td ng-bind="item.telephone">电话</td>
+                    <tr ng-repeat="item in staffItems">
+                        <td ng-bind="item.name"></td>
+                        <td ng-bind="item.power|PowerFilters"></td>
+                        <td ng-bind="item.cellNumber"></td>
                         <td>
-                            <a href="hair-shop-update.html?shopId={{item.id}}&name={{item.name}}&address={{item.address}}&telephone={{item.telephone}}&description={{item.description}}">详情</a>
-                            <a href="hair-staff-list.html?shopId={{item.id}}">查看员工</a>
+                            <a href="hair-staff-update.html?id={{item.id}}&shopId={{shopId}}&name={{item.name}}&cellNumber={{item.cellNumber}}&power={{item.power}}">详情</a>
                         </td>
                     </tr>
                 </table>

@@ -16,7 +16,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    <script data-main="scripts/shop" src="scripts/vendor/require.js"></script>
+    <script data-main="scripts/packet" src="scripts/vendor/require.js"></script>
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -38,30 +38,33 @@
         </nav>
     </header>
     <!-- Content Wrapper. Contains page content -->
-    <div class="contedsfnt-wrapper" ng-controller="ShopListCtrl">
+    <div class="contedsfnt-wrapper" ng-controller="PacketListCtrl">
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">我的店面信息</h3>
-                <a href="hair-shop-create.html"><label>>>点击新增店</label></a>
+                <h3 class="box-title">我的套餐信息</h3>
+                <a href="hair-packet-create.html"><label>>>点击新增套餐</label></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
 
                 <table class="table table-striped">
                     <tr>
-                        <th>店名</th>
-                        <th>地址</th>
-                        <th>电话</th>
+                        <th>套餐名</th>
+                        <th>折扣率</th>
+                        <th>充值金额</th>
+                        <th>赠送金额</th>
+                        <th>提成</th>
                         <th>操作</th>
                     </tr>
-                    <tr ng-repeat="item in shopItems">
-                        <td ng-bind="item.name">店名</td>
-                        <td ng-bind="item.address">地址</td>
-                        <td ng-bind="item.telephone">电话</td>
+                    <tr ng-repeat="item in packetItems">
+                        <td ng-bind="item.name"></td>
+                        <td ng-bind="item.discount|DiscountFilters"></td>
+                        <td ng-bind="item.money|MoneyFilters"></td>
+                        <td ng-bind="item.given|MoneyFilters"></td>
+                        <td ng-bind="item.retain"></td>
                         <td>
-                            <a href="hair-shop-update.html?shopId={{item.id}}&name={{item.name}}&address={{item.address}}&telephone={{item.telephone}}&description={{item.description}}">详情</a>
-                            <a href="hair-staff-list.html?shopId={{item.id}}">查看员工</a>
+                            <a href="hair-packet-update.html?id={{item.id}}&name={{item.name}}&discount={{item.discount}}&money={{item.money}}&given={{item.given}}&retain={{item.retain}}">详情</a>
                         </td>
                     </tr>
                 </table>
