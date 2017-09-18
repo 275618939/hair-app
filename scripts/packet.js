@@ -1,4 +1,4 @@
-// the app/scripts/main.js file, which defines our RequireJS config
+
 require.config({
     paths: {
         angular: 'vendor/angular',
@@ -46,7 +46,6 @@ require([
         'filters/moneyFilters',
         'filters/discountFilters',
         'controllers/packetController',
-        'controllers/commonController',
         'interceptors/requestInterceptors'
     ],
     function (angular, angularRoute, app, domReady) {

@@ -1,4 +1,4 @@
-// the app/scripts/main.js file, which defines our RequireJS config
+
 require.config({
     paths: {
         angular: 'vendor/angular',
@@ -33,7 +33,6 @@ require([
         'app', 'domReady', 'jquery', 'jqueryMd5',
         'filters/intervalFilters',
         'controllers/userController',
-        'controllers/commonController',
         'interceptors/requestInterceptors'
         /*  'directives/ngbkFocus'*/
         // Any individual controller, service, directive or filter file
@@ -45,7 +44,7 @@ require([
             function ($httpProvider, $routeProvider) {
                 $httpProvider.interceptors.push('RequestInterceptors');
                 /*      $routeProvider.when('/', {
-                 templateUrl: 'views/root.html',
+                 templateUrl: 'views/roo.html',
                  controller: 'IndexCtrl'
                  }).otherwise({
                  redirectTo: '/'
