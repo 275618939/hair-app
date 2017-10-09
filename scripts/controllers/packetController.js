@@ -25,11 +25,6 @@ define(['controllers/controllers', 'services/packetService', 'services/commonSer
                     if (isNaN(given)) {
                         given = 0;
                     }
-                    if (isNaN(discount) || discount > 100 || discount < 0) {
-                        alert("请输入正确的提成！");
-                        return;
-                    }
-
                     if (isNaN(retain) || retain == null || retain.trim().length <= 0) {
                         retain = 0;
                     }
@@ -38,7 +33,7 @@ define(['controllers/controllers', 'services/packetService', 'services/commonSer
                         discount: discount,
                         money: commonService.getFen(money),
                         given: commonService.getFen(given),
-                        retain: retain
+                        retain: commonService.getFen(retain)
                     };
                     var promise = packetService.packetCreate(data);
                     promise.then(function (data) {
