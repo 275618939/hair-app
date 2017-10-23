@@ -127,7 +127,7 @@ define(['controllers/controllers', 'services/packetService', 'services/commonSer
                         name: name,
                         discount: commonService.getDiscount(discount),
                         money: commonService.getFen(money),
-                        given: commonService.getFen(given),
+                        given: parseInt(commonService.getFen(given)),
                         retain: retain
                     };
                     var promise = packetService.packetUpdate(data);

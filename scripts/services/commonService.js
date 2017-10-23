@@ -153,7 +153,7 @@ define(['services/services'],
                     },
                     getDiscountConvert: function (money) {
                         var yuan = money / 10.0;
-                        return yuan.toFixed(2);
+                        return yuan.toFixed(1);
                     },
                     getFen: function (money) {
                         if (money <= 0) {
@@ -208,7 +208,7 @@ define(['services/services'],
                          return data;*/
 
                         var yuan = money / 100.0;
-                        return yuan.toFixed(2);
+                        return yuan.toFixed(1);
                     },
                     jsonSort: function (json, key) {
                         for (var j = 1, jl = json.length; j < jl; j++) {
