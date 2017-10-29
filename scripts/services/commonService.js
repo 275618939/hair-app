@@ -23,18 +23,18 @@ define(['services/services'],
                     },
                     powerInfo: {
                         "powerOptions": [
-                            {
-                                "id": 0x3f9f,
-                                "label": "默认权限"
+                            /*{
+                                "id": 0xbf9b,
+                                "label": "系统管理员"
                             },
                             {
-                                "id": 0xfff,
+                                "id": 0xb39b,
+                                "label": "员工权限"
+                            },*/
+                            {
+                                "id": 0xff7,
                                 "label": "店长权限"
-                            },
-                            {
-                                "id": 0x0001,
-                                "label": "店信息维护"
-                            },
+                            }/*,
                             {
                                 "id": 0x0002,
                                 "label": "店员信息维护"
@@ -90,7 +90,7 @@ define(['services/services'],
                             {
                                 "id": 0x8000,
                                 "label": "权限控制"
-                            }]
+                            }*/]
                     },
                     reportUrl: "http://" + window.location.host + ":9601/getScaleReportResult?json={'resultId':*}",
                     //添加cookie
