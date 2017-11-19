@@ -30,7 +30,7 @@ define(['controllers/controllers', 'services/packetService', 'services/commonSer
                     }
                     var data = {
                         name: name,
-                        discount: discount,
+                        discount:commonService.getDiscount(discount),
                         money: commonService.getFen(money),
                         given: commonService.getFen(given),
                         retain: commonService.getFen(retain)
